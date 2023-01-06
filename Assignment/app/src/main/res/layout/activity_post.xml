@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PostActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        android:gravity="center"
+        android:id="@+id/appTopBar"
+        android:theme="@style/Theme.Assignment.AppBarOverlay">
+
+        <TextView
+            app:navigationIcon="@drawable/logo"
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minHeight="?actionBarSize"
+            android:padding="@dimen/appbar_padding"
+            android:text="FindIt - Post"
+            android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true"
+        android:scrollbars = "vertical"
+        android:scrollbarStyle="insideInset">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:textColor="@color/dark_blue"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="17dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="95dp"
+                android:text="Lost or found yours or someone else's\nbelongings? Don't worry, just make a post!" />
+
+            <EditText
+                android:id="@+id/namePost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="160dp"
+                android:layout_marginRight="40dp"
+                android:hint="Full name" />
+
+            <EditText
+                android:id="@+id/studentNumberPost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="23dp"
+                android:layout_below="@id/namePost"
+                android:hint="Student number" />
+
+            <EditText
+                android:id="@+id/itemPost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="23dp"
+                android:layout_below="@id/studentNumberPost"
+                android:hint="Item" />
+
+            <EditText
+                android:id="@+id/descriptionPost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="23dp"
+                android:layout_below="@id/itemPost"
+                android:hint="Description"
+                android:inputType="textMultiLine" />
+
+            <EditText
+                android:id="@+id/phonePost"
+                android:hint="Phone number"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23dp"
+                android:layout_below="@id/descriptionPost"
+                android:inputType="phone" />
+
+            <EditText
+                android:id="@+id/locationPost"
+                android:hint="Last seen location"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23dp"
+                android:layout_below="@id/phonePost"
+                android:inputType="textPostalAddress" />
+
+            <LinearLayout
+                android:id="@+id/locationRadio"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/locationPost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/locationButtonPost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="42dp"
+                    android:text="set Location" />
+
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:id="@+id/lostFoundPost"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:text="Lost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lostPost" />
+
+                    <RadioButton
+                        android:layout_marginLeft="8dp"
+                        android:text="Found"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/foundPost" />
+                </RadioGroup>
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/buttonPost"
+                android:layout_below="@id/locationRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/locationPost"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="234dp"
+                android:layout_marginBottom="90dp"
+                android:text="post" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_navigation"
+        app:itemTextColor="@drawable/selector"
+        app:itemIconTint="@drawable/selector"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menu"/>
+
+</RelativeLayout>

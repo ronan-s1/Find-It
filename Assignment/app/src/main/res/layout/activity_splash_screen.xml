@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    tools:context=".SplashScreen">
+
+    <ImageView
+        android:id="@+id/logoSplashScreen"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/logo_login" />
+
+    <TextView
+        android:id="@+id/ronan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:layout_marginBottom="35dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"
+        android:letterSpacing="0.211"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:text="Ronan Singpurwala"/>
+
+</RelativeLayout>
